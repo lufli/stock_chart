@@ -1,0 +1,8 @@
+#!/bin/bash
+mkdir -p assets/bundles
+cd frontend
+npm install
+npm run build
+cd ..
+mv assets/bundles/webpack-stats.prod.json webpack-stats.prod.json
+./manage.py runserver 127.0.0.1:7777 --settings=stock_chart.production_settings
